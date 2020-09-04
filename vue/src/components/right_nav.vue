@@ -6,7 +6,7 @@
       </div>
       <div class = "jieshou">我接受到的父组件的消息是：{{isShow}}</div>
       <div class = "right_nav_list">
-        <div class = "right_nav_list_li" v-for = "item in navList">
+        <div class = "right_nav_list_li" v-for = "(item,index) in navList" v-bind:key="index">
           {{ item }}
         </div>
       </div>
