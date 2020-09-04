@@ -1,12 +1,14 @@
 <template>
-  <div>home页面</div>
-
+  <Navcon />
 </template>
 
 <script>
+  import Navcon from "@/components/top_nav";
+
+  export default {
+    components: {
+      Navcon
+    }
+  };
 
 </script>
-
-<style>
-
-</style>

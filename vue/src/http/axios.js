@@ -1,17 +1,17 @@
-import axios from 'axios';
+import axios from 'axios'
 
-//后端请求地址
+// 后端请求地址
 const baseUrl = 'http://localhost:3000';
 
-//axios实例配置
+// axios实例配置
 const instance = axios.create({
   baseURL: baseUrl,
   timeout: 5000,
   headers: { 'Content-Type': 'application/json; charset=utf-8' }
 });
 
-//==========================================HTTP==========================================
-//Get请求
+// ==========================================HTTP==========================================
+// Get请求
 export function getHttp(url) {
   return instance({
     url: url,
@@ -20,7 +20,7 @@ export function getHttp(url) {
   });
 }
 
-//Post请求
+// Post请求
 export function postHoop(url, data) {
   return instance({
     url: url,
@@ -29,7 +29,7 @@ export function postHoop(url, data) {
   })
 }
 
-//上传文件
+// 上传文件
 export function upload(file, filename) {
   let formData = new FormData();
   formData.append("filename", filename);

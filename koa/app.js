@@ -23,9 +23,9 @@ app.use(bodyparser({
 app.use(json())
 app.use(logger())
 
-app.use(require('koa-static')(__dirname + '/public/dist'));
+app.use(require('koa-static')(__dirname + '/public'));
 
-app.use(views(__dirname + '/views/dist', {
+app.use(views(__dirname + '/public', {
   extension: 'html'
 }));
 // logger
