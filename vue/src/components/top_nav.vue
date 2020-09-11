@@ -1,68 +1,62 @@
 <template>
   <div>
-    <div class = "nav">
-      <div class = "nav-left"></div>
-      <div class = "nav-right" @click = "getShowRight"></div>
+    <div class="nav">
+      <img class="nav-left" src="../assets/logo.png" alt="" />
+      <img
+        src="../assets/right_icon.png"
+        alt=""
+        class="nav-right"
+        @click="getShowRight"
+      />
     </div>
-    <div v-if = "isShow">
-      <RightNav :isShow = "isShow"  />
-    </div>
+    <RightNav :isShow="isShow" @closeBox="toClose" />
   </div>
-
 </template>
 
 <script>
-  import RightNav from '../components/right_nav';
+import RightNav from "@/components/right_nav";
 
-  export default {
-    name: "top_nav",
-    components: {
-      RightNav,
+export default {
+  name: "top_nav",
+  components: {
+    RightNav,
+  },
+  data() {
+    return {
+      isShow: false,
+    };
+  },
+  methods: {
+    getShowRight() {
+      this.isShow = true;
     },
-    data() {
-      return {
-        isShow: false,
-        message: 'hello world'
-      }
+    toClose(value) {
+      this.isShow = value;
     },
-    methods: {
-      getShowRight() {
-        this.isShow = true;
-        console.log(this.isShow);
-      }
-    }
-  }
+  },
+};
 </script>
 
 <style scoped>
-  .nav {
-    width: 100%;
-    /*height: 80px;*/
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 60px;
-    box-sizing: border-box;
-    border: 1px red solid;
+.nav {
+  width: 100%;
+  height: 21.85vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 4.63vh 60px 0 60px;
+  box-sizing: border-box;
+}
 
-  }
+.nav-left {
+  width: 89px;
+  height: 29px;
+  background-size: cover;
+}
 
-  .nav-left {
-    width: 89px;
-    height: 29px;
-    border: 1px red solid;
-
-  }
-
-  .nav-right {
-    width: 50px;
-    height: 25px;
-    border: 1px red solid;
-  }
-
-  .aa {
-    color: red;
-  }
-
-
+.nav-right {
+  width: 50px;
+  height: 25px;
+  background-size: cover;
+  cursor: pointer;
+}
 </style>

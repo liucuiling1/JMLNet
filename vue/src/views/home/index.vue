@@ -1,14 +1,14 @@
 <template>
-  <Navcon />
+  <MainPage />
 </template>
 
 <script>
-  import Navcon from "@/components/top_nav";
+import MainPage from "../common/main_page";
 
-  export default {
-    components: {
-      Navcon
-    }
-  };
-
+export default {
+  components: {
+    MainPage,
+  },
+};
 </script>
+ƒ

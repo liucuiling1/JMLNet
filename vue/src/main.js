@@ -1,12 +1,13 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
 
-
-Vue.config.productionTip = false
+//分辨率适配
+// import "lib-flexible";
+Vue.config.productionTip = false;
 
 new Vue({
-	el: '#app',
+  el: "#app",
   router,
-  render: h => h(App),
-})
+  render: (h) => h(App),
+});
